@@ -31,20 +31,20 @@ export default function Navbar() {
                             <li>
                                 <Link href="/"><Image src={logo} alt="Logo" /></Link>
                             </li>
-                            <li>
-                                <Link href="/" className={pathname === "/" ? "text-blue-600 font-bold underline" : ""}>Home</Link>
+                            <li className="relative">
+                                <Link href="/" className={pathname === "/" ? "text-black font-bold outline-1 outline-gray-900 outline-solid rounded-3xl px-1 py-0.5 flex justify-center items-center m-0 transition-all duration-100" : ""}>Home</Link>
                             </li>
                             <li>
-                                <Link href="/products" className={pathname.startsWith("/products") ? "text-blue-600 font-bold underline" : ""}>Products</Link>
+                                <Link href="/products" className={pathname.startsWith("/products") ? "text-black font-bold outline-1 outline-gray-900 outline-solid rounded-3xl px-1 py-0.5 flex justify-center items-center m-0 transition-all duration-100" : ""}>Products</Link>
                             </li>
                             <li>
-                                <CategoriesNavLink className={pathname.startsWith("/categories") ? "text-blue-600 font-bold underline" : ""} />
+                                <CategoriesNavLink className={pathname.startsWith("/categories") ? "text-black font-bold outline-1 outline-gray-900 outline-solid rounded-3xl px-1 py-0.5 flex justify-center items-center m-0 transition-all duration-100" : ""} />
                             </li>
                             <li>
-                                <Link href="/brands" className={pathname.startsWith("/brands") ? "text-blue-600 font-bold underline" : ""}>Brands</Link>
+                                <Link href="/brands" className={pathname.startsWith("/brands") ? "text-black font-bold outline-1 outline-gray-900 outline-solid rounded-3xl px-1 py-0.5 flex justify-center items-center m-0 transition-all duration-100" : ""}>Brands</Link>
                             </li>
                             {data && (
-                                <li><Link href="/allorders">Orders</Link></li>
+                                <li><Link href="/allorders" className={pathname.startsWith("/allorders") ? "text-black font-bold outline-1 outline-gray-900 outline-solid rounded-3xl px-1 py-0.5 flex justify-center items-center m-0 transition-all duration-100" : ""}>Orders</Link></li>
                             )}
                         </ul>
                     </div>

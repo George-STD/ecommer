@@ -4,7 +4,13 @@ const nextConfig: NextConfig = {
   /* config options here */
   reactCompiler: true,
   images: {
-    remotePatterns: [new URL('https://ecommerce.routemisr.com/**/** ')],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'ecommerce.routemisr.com',
+        pathname: '/**',
+      },
+    ],
   },
 };
 
