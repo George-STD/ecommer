@@ -27,24 +27,68 @@ export default function Navbar() {
             <nav className="bg-slate-300 py-6 dark:bg-gray-600 dark:text-white">
                 <div className="container flex justify-between items-center">
                     <div className="left">
-                        <ul className="flex items-center gap-3">
+                        <ul className="left flex items-center gap-3">
                             <li>
                                 <Link href="/"><Image src={logo} alt="Logo" /></Link>
                             </li>
                             <li className="relative">
-                                <Link href="/" className={pathname === "/" ? "text-black font-bold outline-1 outline-gray-900 outline-solid rounded-3xl px-1 py-0.5 flex justify-center items-center m-0 transition-all duration-100" : ""}>Home</Link>
+                                <Link
+                                    href="/"
+                                    className={`relative px-3 py-1 rounded-lg transition-all duration-200 flex items-center
+                                        ${pathname === "/"
+                                            ? "bg-primary text-white shadow-md font-bold after:absolute after:left-1/2 after:-bottom-1 after:-translate-x-1/2 after:w-2/3 after:h-1 after:bg-accent after:rounded-full dark:text-black"
+                                            : "text-gray-700 hover:bg-gray-200 dark:text-gray-200 dark:hover:bg-gray-700"}
+                                    `}
+                                >
+                                    Home
+                                </Link>
                             </li>
-                            <li>
-                                <Link href="/products" className={pathname.startsWith("/products") ? "text-black font-bold outline-1 outline-gray-900 outline-solid rounded-3xl px-1 py-0.5 flex justify-center items-center m-0 transition-all duration-100" : ""}>Products</Link>
+                            <li className="relative">
+                                <Link
+                                    href="/products"
+                                    className={`relative px-3 py-1 rounded-lg transition-all duration-200 flex items-center
+                                        ${pathname.startsWith("/products")
+                                            ? "bg-primary text-white shadow-md font-bold after:absolute after:left-1/2 after:-bottom-1 after:-translate-x-1/2 after:w-2/3 after:h-1 after:bg-accent after:rounded-full dark:text-black"
+                                            : "text-gray-700 hover:bg-gray-200 dark:text-gray-200 dark:hover:bg-gray-700"}
+                                    `}
+                                >
+                                    Products
+                                </Link>
                             </li>
-                            <li>
-                                <CategoriesNavLink className={pathname.startsWith("/categories") ? "text-black font-bold outline-1 outline-gray-900 outline-solid rounded-3xl px-1 py-0.5 flex justify-center items-center m-0 transition-all duration-100" : ""} />
+                            <li className="relative">
+                                <CategoriesNavLink
+                                    className={`relative px-3 py-1 rounded-lg transition-all duration-200 flex items-center
+                                        ${pathname.startsWith("/categories")
+                                            ? "bg-primary text-white shadow-md font-bold after:absolute after:left-1/2 after:-bottom-1 after:-translate-x-1/2 after:w-2/3 after:h-1 after:bg-accent after:rounded-full dark:text-black"
+                                            : "text-gray-700 hover:bg-gray-200 dark:text-gray-200 dark:hover:bg-gray-700"}
+                                    `}
+                                />
                             </li>
-                            <li>
-                                <Link href="/brands" className={pathname.startsWith("/brands") ? "text-black font-bold outline-1 outline-gray-900 outline-solid rounded-3xl px-1 py-0.5 flex justify-center items-center m-0 transition-all duration-100" : ""}>Brands</Link>
+                            <li className="relative">
+                                <Link
+                                    href="/brands"
+                                    className={`relative px-3 py-1 rounded-lg transition-all duration-200 flex items-center
+                                        ${pathname.startsWith("/brands")
+                                            ? "bg-primary text-white shadow-md font-bold after:absolute after:left-1/2 after:-bottom-1 after:-translate-x-1/2 after:w-2/3 after:h-1 after:bg-accent after:rounded-full dark:text-black"
+                                            : "text-gray-700 hover:bg-gray-200 dark:text-gray-200 dark:hover:bg-gray-700"}
+                                    `}
+                                >
+                                    Brands
+                                </Link>
                             </li>
                             {data && (
-                                <li><Link href="/allorders" className={pathname.startsWith("/allorders") ? "text-black font-bold outline-1 outline-gray-900 outline-solid rounded-3xl px-1 py-0.5 flex justify-center items-center m-0 transition-all duration-100" : ""}>Orders</Link></li>
+                                <li className="relative">
+                                    <Link
+                                        href="/allorders"
+                                        className={`relative px-3 py-1 rounded-lg transition-all duration-200 flex items-center
+                                            ${pathname.startsWith("/allorders")
+                                                ? "bg-primary text-white shadow-md font-bold after:absolute after:left-1/2 after:-bottom-1 after:-translate-x-1/2 after:w-2/3 after:h-1 after:bg-accent after:rounded-full dark:text-black"
+                                                : "text-gray-700 hover:bg-gray-200 dark:text-gray-200 dark:hover:bg-gray-700"}
+                                        `}
+                                    >
+                                        Orders
+                                    </Link>
+                                </li>
                             )}
                         </ul>
                     </div>
@@ -76,8 +120,18 @@ export default function Navbar() {
                                 </>
                             ) : (
                                 <>
-                                    <li><Link href="/login">Login</Link></li>
-                                    <li><Link href="/register">Register</Link></li>
+                                    <li className="relative">
+                                        <Link href="/login" className={`relative px-3 py-1 rounded-lg transition-all duration-200 flex items-center
+                                            ${pathname.startsWith("/login")
+                                                ? "bg-primary text-white shadow-md font-bold after:absolute after:left-1/2 after:-bottom-1 after:-translate-x-1/2 after:w-2/3 after:h-1 after:bg-accent after:rounded-full dark:text-black"
+                                                : "text-gray-700 hover:bg-gray-200 dark:text-gray-200 dark:hover:bg-gray-700"}
+                                        `}>Login</Link></li>
+                                    <li className="relative">
+                                        <Link href="/register" className={`relative px-3 py-1 rounded-lg transition-all duration-200 flex items-center
+                                            ${pathname.startsWith("/register")
+                                                ? "bg-primary text-white shadow-md font-bold after:absolute after:left-1/2 after:-bottom-1 after:-translate-x-1/2 after:w-2/3 after:h-1 after:bg-accent after:rounded-full dark:text-black"
+                                                : "text-gray-700 hover:bg-gray-200 dark:text-gray-200 dark:hover:bg-gray-700"}
+                                        `}>Register</Link></li>
                                 </>
                             )}
                             <li className="block dark:hidden"><Moon onClick={() => { setTheme('dark') }} /></li>

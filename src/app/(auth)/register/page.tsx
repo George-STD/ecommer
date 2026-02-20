@@ -125,7 +125,7 @@ export default function Register() {
             </FormItem>
           )} />
           <div className='flex justify-center'>
-            <Button className='w-1/3 py-4 bg-black hover:bg-white hover:text-black hover:outline-2 hover:outline-black hover:outline-solid cursor-pointer ' >Register</Button>
+            <Button className='w-1/3 py-4 bg-black hover:bg-white hover:text-black hover:outline-2 hover:outline-black hover:outline-solid cursor-pointer dark:text-white dark:hover:text-black dark:outline-1 dark:outline-white dark:outline-solid ' >Register</Button>
           </div>
         </form>
       </Form >

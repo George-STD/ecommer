@@ -43,7 +43,7 @@ export default function Login() {
   };
 
   return (
-    <div className='w-1/2 mx-auto my-12'>
+    <div className='w-1/2 mx-auto my-6'>
       <h1 className='text-3xl font-semibold my-5'>Login</h1>
       <Form {...myForm}>
         <form action="" onSubmit={myForm.handleSubmit(handelLogin)} className='space-y-3'>
@@ -78,7 +78,7 @@ export default function Login() {
             </FormItem>
           )} />
           <div className='flex justify-between items-center'>
-            <Button className='w-1/5 py-4 bg-black hover:bg-white hover:text-black hover:outline-2 hover:outline-black hover:outline-solid cursor-pointer ' >Login</Button>
+            <Button className='w-1/5 py-4 bg-black hover:bg-white hover:text-black hover:outline-2 hover:outline-black hover:outline-solid cursor-pointer dark:text-white dark:hover:text-black dark:outline-1 dark:outline-white dark:outline-solid ' >Login</Button>
             <Link href={'/forgetPassword'} className='text-blue-400 underline'>Forget Password</Link>
           </div>
           <div className='text-center'>

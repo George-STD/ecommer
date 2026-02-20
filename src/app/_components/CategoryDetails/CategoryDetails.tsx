@@ -14,7 +14,6 @@ export default function CategoryDetails({ id }: CategoryDetailsProps) {
   async function handleSpasificCategorie() {
     const data = await getSpacificCategories(id);
     setCateDate(data);
-    console.log(data);
   }
   useEffect(() => {
     handleSpasificCategorie();

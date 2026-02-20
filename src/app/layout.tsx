@@ -31,19 +31,19 @@ export default function RootLayout({
 }>) {
   return (
     <html suppressHydrationWarning lang='en'>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased `}>
-
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col dark:bg-black/5 `}>
         <ThemeProvider defaultTheme='light' attribute={'class'}>
           <MyProvider>
             <CartProvider>
               <Toaster richColors theme='light' closeButton />
               <Navbar />
-              {children}
+              <main className="flex-1 flex flex-col">
+                {children}
+              </main>
               <Footer />
             </CartProvider>
           </MyProvider>
         </ThemeProvider>
-
       </body>
     </html>
   );

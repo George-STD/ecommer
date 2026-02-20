@@ -2,20 +2,20 @@ import { getToken } from "next-auth/jwt";
 import { NextRequest, NextResponse } from "next/server";
 
 export default async function middleware(request: NextRequest) {
-    
     const token = await getToken({ req: request });
-    const { pathname } = request.nextUrl
+    const { pathname } = request.nextUrl;
 
-    if (!token && pathname == '/cart' || pathname == '/orders') {
-        return NextResponse.redirect(new URL('/login', request.url))
-    } else if (token && pathname == '/login' || pathname == '/register') {
-        return NextResponse.redirect(new URL('/', request.url))
-    }else{
-        return NextResponse.next()
+    // حماية صفحات cart و allorders
+    if (!token && (pathname === '/cart' || pathname === '/allorders')) {
+        return NextResponse.redirect(new URL('/login', request.url));
     }
-
+    // منع دخول صفحات login/register للمسجلين
+    if (token && (pathname === '/login' || pathname === '/(auth)/register')) {
+        return NextResponse.redirect(new URL('/', request.url));
+    }
+    return NextResponse.next();
 }
 
 export const config = {
-    matcher: ['/cart', '/order','/login','/register']
+    matcher: ['/cart', '/allorders', '/login', '/(auth)/register']
 }

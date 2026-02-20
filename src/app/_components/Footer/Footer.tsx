@@ -15,9 +15,9 @@ export default function Footer() {
       <div className="container">
         <div>
           <h3 className='text-2xl pb-2'>Get The Fresh Cart App</h3>
-          <p className='text-gray-600'>We Will Send You a Link, Open It On Your Phone To Download The App</p>
+          <p className='text-gray-600 dark:text-white/50'>We Will Send You a Link, Open It On Your Phone To Download The App</p>
           <div className='flex px-8 py-4'>
-            <Input placeholder='Email...' className='bg-white me-2' />
+            <Input placeholder='Email...' className='bg-white me-2 dark:bg-white/70 ' />
             <Button>Share App Link</Button>
           </div>
           <div className='footerBottom flex flex-col lg:flex-row border-black/25 border-solid border-t-2 border-b-2 p-4 ps-8 justify-between mb-6'>
