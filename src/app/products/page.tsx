@@ -1,4 +1,5 @@
 import React from 'react'
+import FrameMotion from '@/app/_components/FrameMotion/FrameMotion';
 import MainProduct from '../_components/MainProduct/MainProduct'
 import { Metadata } from 'next';
 
@@ -8,10 +9,10 @@ export const metadata: Metadata = {
 };
 export default function page() {
   return (
-    <>
+    <FrameMotion>
       <div className="container py-8">
-          <MainProduct />
+        <MainProduct />
       </div>
-    </>
+    </FrameMotion>
   )
 }

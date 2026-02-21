@@ -8,6 +8,7 @@ import { Toaster } from '@/components/ui/sonner';
 import CartProvider from '../context/cart.context'
 import MyProvider from '@/MyProvider/MyProvider';
 import { ThemeProvider } from 'next-themes';
+import FrameMotion from './_components/FrameMotion/FrameMotion';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -38,7 +39,9 @@ export default function RootLayout({
               <Toaster richColors theme='light' closeButton />
               <Navbar />
               <main className="flex-1 flex flex-col">
-                {children}
+                <FrameMotion>
+                  {children}
+                </FrameMotion>
               </main>
               <Footer />
             </CartProvider>
